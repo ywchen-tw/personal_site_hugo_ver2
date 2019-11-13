@@ -84,7 +84,7 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
   
   
   
-  <link rel="stylesheet" href="/css/academia.min.b8ebefb25fd7c164398576689e826a3f.css">
+  <link rel="stylesheet" href="/css/academia.min.98b5614561a12ae2a75b77680e838371.css">
 
   
 
@@ -165,7 +165,8 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
 
       <div id="search-box">
         
-        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
         
       </div>
 
@@ -223,7 +224,7 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Home</span></a>
+          <a class="nav-link " href="/#about"><span><font size="4.5"><b>Home</b></font></span></a>
         </li>
 
         
@@ -252,7 +253,7 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#research"><span>Research</span></a>
+          <a class="nav-link " href="/#research"><span><font size="4.5"><b>Research</b></font></span></a>
         </li>
 
         
@@ -281,7 +282,7 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          <a class="nav-link " href="/#publications"><span><font size="4.5"><b>Publications</b></font></span></a>
         </li>
 
         
@@ -310,7 +311,7 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#teaching"><span>Experience</span></a>
+          <a class="nav-link " href="/#teaching"><span><font size="4.5"><b>Experience</b></font></span></a>
         </li>
 
         
@@ -339,7 +340,7 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#gallery"><span>Traveling</span></a>
+          <a class="nav-link " href="/#gallery"><span><font size="4.5"><b>Traveling</b></font></span></a>
         </li>
 
         
@@ -349,6 +350,10 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
 
         
 
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
         
 
         
@@ -378,6 +383,8 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
     <span><i class="fas fa-bars"></i></span>
   </button>
 
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
   
 </form>
 
@@ -569,6 +576,22 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
     
 
     
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
 
     
     
@@ -579,13 +602,31 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
     
 
     
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
 
     
     
 
     
     
-
     
     
     
@@ -593,12 +634,12 @@ Tip 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tell
     
     
     
+      
     
     
     
     
-    
-    <script src="/js/academia.min.281fa180ccfa1769ea3c7dd430814861.js"></script>
+    <script src="/js/academia.min.75978b39883a27b262f4f051da2ecf3c.js"></script>
 
     
 
