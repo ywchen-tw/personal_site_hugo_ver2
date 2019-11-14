@@ -14,11 +14,19 @@
     
     <item>
       <title>Tracer distribution simulation in western Taiwan using high resolution Taiwan Vector Vorticity Model (Ongoing)</title>
-      <link>https://ywchen-tw.github.io/project/tracer/</link>
+      <link>https://ywchen-tw.github.io/project/tracer_transport/</link>
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ywchen-tw.github.io/project/tracer/</guid>
+      <guid>https://ywchen-tw.github.io/project/tracer_transport/</guid>
       <description>&lt;p&gt;In this project, I analyzed simulation results and evaluated the impact on target regions, which usually have terrible air pollutions. In the next stage, we aim to applied zero and first-order chemical reactions into the model to inspect lifetime effect on the regions so as to understand the sources of the pollutant in those highly-polluted regions.&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+Data used in this project:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Taiwan Vector Vorticity Modeling results&lt;/li&gt;
+&lt;li&gt;Ground-based measurements&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
