@@ -20,7 +20,29 @@
       <guid>https://ywchen-tw.github.io/project/measurement_intercomparison/</guid>
       <description>&lt;p&gt;In this project, we focus on the pollutions near major sources over western Taiwan.
 Aircraft-based observation data are analyzed and compared with surface measurements to investigate near surface chemical reactions of pollutants.
-The result will be presented in 18th ACC in Taipei in Dec. 2019.&lt;/p&gt;
+The preliminary result was presented in 18th ACC in Taipei in Dec. 2019.&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;ACC_Poster.jpg&#34; &gt;
+
+&lt;img src=&#34;ACC_Poster.jpg&#34; &gt;
+&lt;/a&gt;
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Figure 1. Poster presented in 18th ACC in Taipei in Dec. 2019.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
 
 &lt;p&gt;&lt;/br&gt;
 Data used in this project:&lt;/p&gt;
@@ -59,6 +81,96 @@ Data used in this project:&lt;/p&gt;
       
       <guid>https://ywchen-tw.github.io/project/glucose_quantification/</guid>
       <description>&lt;p&gt;A single-step method combining material preparation and the actual glucose measurements via the in situ growth of Cu&lt;sub&gt;2&lt;/sub&gt;O/Ag nanoparticles was reported. Mechanistically, I use glucose itself to reduce Cu&lt;sup&gt;2+&lt;/sup&gt; and Ag&lt;sup&gt;+&lt;/sup&gt; ions that are stabilized with 3-mercaptopropionic acid and bovine serum albumin under alkaline conditions to form Cu&lt;sub&gt;2&lt;/sub&gt;O/Ag nanoparticles and produce a color change in solution due to plasmonic resonance at 400 nm, which can be related back to the concentration of glucose. This was also the research of my master thesis.&lt;/p&gt;
+
+&lt;p&gt;In this project, a smartphone-controlled portable device was designed and carried out using &lt;strong&gt;Arduino&lt;/strong&gt; system. The following figures show the relationships between each component in the device, the circuit and prototype of the device, and flow chart and images of the Android application to control the device.&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;Block%20diagram.png&#34; &gt;
+
+&lt;img src=&#34;Block%20diagram.png&#34; &gt;
+&lt;/a&gt;
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Figure 1. Component relationships diagram.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;circuit%20and%20prototype.png&#34; &gt;
+
+&lt;img src=&#34;circuit%20and%20prototype.png&#34; &gt;
+&lt;/a&gt;
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Figure 2. (a) Circuit and (b) prototype of the device.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;flow_chart.png&#34; &gt;
+
+&lt;img src=&#34;flow_chart.png&#34; &gt;
+&lt;/a&gt;
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Figure 3. Flow chart of the Android application to control the device.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;app%20image.png&#34; &gt;
+
+&lt;img src=&#34;app%20image.png&#34; &gt;
+&lt;/a&gt;
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Figure 4. Images of the Android application.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
 </description>
     </item>
     

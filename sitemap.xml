@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ywchen-tw.github.io/note/plot-using-python/basemap_1/</loc>
+    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ywchen-tw.github.io/note/others-python/jupyter1/</loc>
+    <lastmod>2019-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ywchen-tw.github.io/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
@@ -358,11 +368,28 @@
   </url>
   
   <url>
+    <loc>https://ywchen-tw.github.io/note/plot-using-python/basemap_1/taiwan_maps/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ywchen-tw.github.io/categories/</loc>
   </url>
   
   <url>
     <loc>https://ywchen-tw.github.io/courses/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ywchen-tw.github.io/note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ywchen-tw.github.io/note/others-python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ywchen-tw.github.io/note/plot-using-python/</loc>
   </url>
   
 </urlset>
