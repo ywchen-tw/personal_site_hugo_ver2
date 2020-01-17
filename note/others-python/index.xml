@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Others (Python) on Yu-Wen Chen</title>
+    <link>https://ywchen-tw.github.io/note/others-python/</link>
+    <description>Recent content in Others (Python) on Yu-Wen Chen</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; {year} Yu-Wen Chen </copyright>
+    
+	    <atom:link href="https://ywchen-tw.github.io/note/others-python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jupyter notebook remote setting</title>
+      <link>https://ywchen-tw.github.io/note/others-python/jupyter1/</link>
+      <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ywchen-tw.github.io/note/others-python/jupyter1/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Install jupyter
+&lt;br \&gt;See the intruction &lt;a href=&#34;https://jupyter.org/install&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Generate the jupyter profile &lt;strong&gt;jupyter_notebook_config.py&lt;/strong&gt; in the linux environment
+&lt;br \&gt;&lt;code&gt;jupyter notebook --generate-config&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;strong&gt;jupyter_notebook_config.py&lt;/strong&gt;
+&lt;br \&gt;&lt;code&gt;vim ~/.jupyter/jupyter_notebook_config.py&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modify and uncomment the following codes&lt;br \&gt;
+&lt;code&gt;c.NotebookApp.ip = ’0.0.0.0’&lt;/code&gt; (for 5.7.0 and later version)&lt;br \&gt;
+&lt;code&gt;c.NotebookApp.ip = ’*’&lt;/code&gt; (for the previous version)&lt;br \&gt;
+&lt;code&gt;c.NotebookApp.password = ’’&lt;/code&gt;&lt;br \&gt;
+&lt;code&gt;c.NotebookApp.open_browser = False&lt;/code&gt;&lt;br \&gt;
+&lt;code&gt;c.NotebookApp.allow_remote_access = True&lt;/code&gt;&lt;br \&gt;
+&lt;code&gt;c.NotebookApp.port = 8887&lt;/code&gt; (Assign a port)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Execute jupyter notebook&lt;br \&gt;
+&lt;code&gt;jupyter notebook&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy the URL to the local browser&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;[Reference]
+&lt;a href=&#34;https://medium.com/pydata%E8%B3%87%E6%96%99%E7%A7%91%E5%AD%B8%E7%AD%86%E8%A8%98/%E5%BE%9Ewindows-mac%E9%81%A0%E7%AB%AF%E9%96%8B%E5%95%9Flinux%E7%92%B0%E5%A2%83%E4%B8%8B%E7%9A%84jupyter-notebook-1f85587a1317&#34; target=&#34;_blank&#34;&gt;從windows/mac遠端開啟linux環境下的jupyter notebook&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

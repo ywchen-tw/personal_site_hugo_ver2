@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plot using Python on Yu-Wen Chen</title>
+    <link>https://ywchen-tw.github.io/note/plot-using-python/</link>
+    <description>Recent content in Plot using Python on Yu-Wen Chen</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; {year} Yu-Wen Chen </copyright>
+    
+	    <atom:link href="https://ywchen-tw.github.io/note/plot-using-python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plot Taiwan Map with matplotlib</title>
+      <link>https://ywchen-tw.github.io/note/plot-using-python/basemap_1/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ywchen-tw.github.io/note/plot-using-python/basemap_1/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# set map region
+minLat, maxLat = 21.75, 25.5
+minLon, maxLon = 119.25, 122.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# White Background       
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+m.drawcoastlines(color=&#39;k&#39;)
+m.drawcountries(color=&#39;k&#39;)
+# draw parallels.
+parallels = np.arange(21., 26.1, 1.)
+m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=14, linewidth=0.5)
+# draw meridians
+meridians = np.arange(119., 123.1, 1.)
+m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=14, linewidth=0.5)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_2_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# White Background with Countries Boundary
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+m.drawcoastlines(color=&#39;k&#39;)
+# draw parallels.
+parallels = np.arange(21., 26.1, 1.)
+m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=14, linewidth=0.5)
+# draw meridians
+meridians = np.arange(119., 123.1, 1.)
+m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=14, linewidth=0.5, zorder=2)
+# plot countries boundary
+m.readshapefile(&#39;TWN_shapefile/gadm36_TWN_0&#39;, name = &#39;Taiwan&#39;, linewidth=0.75, color=&#39;k&#39;)
+m.readshapefile(&#39;TWN_shapefile/gadm36_TWN_1&#39;, name = &#39;Taiwan&#39;, linewidth=0.75, color=&#39;k&#39;)
+m.readshapefile(&#39;TWN_shapefile/gadm36_TWN_2&#39;, name = &#39;Taiwan&#39;, linewidth=0.75, color=&#39;k&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_3_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The shapefile used in line 16-18 can be downloaded from &lt;a href=&#34;http://www.gadm.org/country&#34; target=&#34;_blank&#34;&gt;http://www.gadm.org/country&lt;/a&gt;.
+Choose country as &amp;ldquo;Taiwan&amp;rdquo; and then download the shapefile.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# World_Physical_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;World_Physical_Map&#39;, xpixels=50000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_5_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# World_Shaded_Relief
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;World_Shaded_Relief&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_6_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# World_Topo_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;World_Topo_Map&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_7_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# NatGeo_World_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;NatGeo_World_Map&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_8_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# ESRI_Imagery_World_2D
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;ESRI_Imagery_World_2D&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_9_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# World_Street_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;World_Street_Map&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_10_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# World_Imagery
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;World_Imagery&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_11_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# ESRI_StreetMap_World_2D
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;ESRI_StreetMap_World_2D&#39;, xpixels=5000, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_12_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Ocean_Basemap
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection=&#39;cyl&#39;,resolution=&#39;h&#39;,llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service=&#39;Ocean_Basemap&#39;, verbose= False)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_13_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

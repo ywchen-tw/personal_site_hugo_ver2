@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jupyter notebook remote setting on Yu-Wen Chen</title>
+    <link>https://ywchen-tw.github.io/note/others-python/jupyter1/</link>
+    <description>Recent content in jupyter notebook remote setting on Yu-Wen Chen</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; {year} Yu-Wen Chen </copyright>
+    <lastBuildDate>Thu, 12 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://ywchen-tw.github.io/note/others-python/jupyter1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

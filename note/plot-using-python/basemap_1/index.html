@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yu-Wen Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Note for Basemap setting.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://ywchen-tw.github.io/note/plot-using-python/basemap_1/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#01a088d2">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academiaons/1.8.6/css/academiaons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academia.min.7f8dc016368dc3e1e1fe039cb590a3e1.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-150748992-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/note/plot-using-python/basemap_1/index.xml" type="application/rss+xml" title="Yu-Wen Chen">
+  <link rel="feed" href="/note/plot-using-python/basemap_1/index.xml" type="application/rss+xml" title="Yu-Wen Chen">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://ywchen-tw.github.io/note/plot-using-python/basemap_1/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Yu-Wen Chen">
+  <meta property="og:url" content="https://ywchen-tw.github.io/note/plot-using-python/basemap_1/">
+  <meta property="og:title" content="Plot Taiwan Map with matplotlib | Yu-Wen Chen">
+  <meta property="og:description" content="Note for Basemap setting."><meta property="og:image" content="https://ywchen-tw.github.io/img/sharing_img.png">
+  <meta property="twitter:image" content="https://ywchen-tw.github.io/img/sharing_img.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="og:updated_time" content="2020-01-02T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Plot Taiwan Map with matplotlib | Yu-Wen Chen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Yu-Wen Chen</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span><font size="5"><b>Home</b></font></span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#research"><span><font size="5"><b>Research</b></font></span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span><font size="5"><b>Publications</b></font></span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#teaching"><span><font size="5"><b>Experience</b></font></span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#gallery"><span><font size="5"><b>Traveling</b></font></span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/note/"><span><font size="5"><b>Notes</b></font></span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/note/plot-using-python/basemap_1/"></a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Plot Taiwan Map with matplotlib</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            <pre><code class="language-python">%matplotlib inline
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+import numpy as np
+</code></pre>
+
+<pre><code class="language-python"># set map region
+minLat, maxLat = 21.75, 25.5
+minLon, maxLon = 119.25, 122.5
+</code></pre>
+
+<pre><code class="language-python"># White Background       
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+m.drawcoastlines(color='k')
+m.drawcountries(color='k')
+# draw parallels.
+parallels = np.arange(21., 26.1, 1.)
+m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=14, linewidth=0.5)
+# draw meridians
+meridians = np.arange(119., 123.1, 1.)
+m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=14, linewidth=0.5)
+plt.show()
+</code></pre>
+
+<p><img src="output_2_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># White Background with Countries Boundary
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+m.drawcoastlines(color='k')
+# draw parallels.
+parallels = np.arange(21., 26.1, 1.)
+m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=14, linewidth=0.5)
+# draw meridians
+meridians = np.arange(119., 123.1, 1.)
+m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=14, linewidth=0.5, zorder=2)
+# plot countries boundary
+m.readshapefile('TWN_shapefile/gadm36_TWN_0', name = 'Taiwan', linewidth=0.75, color='k')
+m.readshapefile('TWN_shapefile/gadm36_TWN_1', name = 'Taiwan', linewidth=0.75, color='k')
+m.readshapefile('TWN_shapefile/gadm36_TWN_2', name = 'Taiwan', linewidth=0.75, color='k')
+plt.show()
+</code></pre>
+
+<p><img src="output_3_0.png" alt="png" /></p>
+
+<p>The shapefile used in line 16-18 can be downloaded from <a href="http://www.gadm.org/country" target="_blank">http://www.gadm.org/country</a>.
+Choose country as &ldquo;Taiwan&rdquo; and then download the shapefile.</p>
+
+<pre><code class="language-python"># World_Physical_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='World_Physical_Map', xpixels=50000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_5_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># World_Shaded_Relief
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='World_Shaded_Relief', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_6_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># World_Topo_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='World_Topo_Map', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_7_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># NatGeo_World_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='NatGeo_World_Map', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_8_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># ESRI_Imagery_World_2D
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='ESRI_Imagery_World_2D', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_9_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># World_Street_Map
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='World_Street_Map', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_10_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># World_Imagery
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='World_Imagery', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_11_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># ESRI_StreetMap_World_2D
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='ESRI_StreetMap_World_2D', xpixels=5000, verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_12_0.png" alt="png" /></p>
+
+<pre><code class="language-python"># Ocean_Basemap
+fig = plt.figure(figsize=(6, 9))
+ax = fig.add_axes([0.025, 0.025, 0.925, 0.925])
+
+# plot map
+m = Basemap(projection='cyl',resolution='h',llcrnrlat=minLat, \
+    urcrnrlat=maxLat, llcrnrlon=minLon, urcrnrlon=maxLon, ax=ax)
+# xpixels controls the pixels in x direction, and if you leave ypixels
+# None, it will choose ypixels based on the aspect ratio
+m.arcgisimage(service='Ocean_Basemap', verbose= False)
+plt.show()
+</code></pre>
+
+<p><img src="output_13_0.png" alt="png" /></p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jan 2, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p class="powered-by">
+          <a href="/privacy/">Privacy Policy</a>
+        </p>
+        
+        
+      </div>
+      <div class="col-md-6">
+        <p align="right">
+            &copy; 2020 Yu-Wen Chen &middot; 
+            Powered by
+            <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+            <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+          </p>
+        <ul class="list-inline network-icon text-right">
+          
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academia.min.281fa180ccfa1769ea3c7dd430814861.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

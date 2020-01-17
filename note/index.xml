@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Yu-Wen Chen</title>
+    <link>https://ywchen-tw.github.io/note/</link>
+    <description>Recent content in Notes on Yu-Wen Chen</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; {year} Yu-Wen Chen </copyright>
+    
+	    <atom:link href="https://ywchen-tw.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Others (Python)</title>
+      <link>https://ywchen-tw.github.io/note/others-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ywchen-tw.github.io/note/others-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plot using Python</title>
+      <link>https://ywchen-tw.github.io/note/plot-using-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ywchen-tw.github.io/note/plot-using-python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
